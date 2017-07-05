@@ -7,6 +7,7 @@ using PaintDotNet.Effects;
 using PaintDotNet.IndirectUI;
 using PaintDotNet.PropertySystem;
 using System.Drawing;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace NormalMapPlus
@@ -28,6 +29,7 @@ namespace NormalMapPlus
             return new PropertyCollection(propsBuilder.ToArray());
         }
 
+        [MethodImpl(MethodImplOptions.NoOptimization)]
         protected override void OnRender(Rectangle[] renderRects, int startIndex, int length)
         {
             EnvironmentParameters.GetSelection(SrcArgs.Bounds);
